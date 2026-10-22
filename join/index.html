@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join TiMi Moments on Discord — Weekly poster challenge &amp; rewards</title>
+<meta name="description" content="Turn your best TiMi screenshot into a poster. Join the Discord, enter the weekly Moment of the Week challenge and win in-game rewards." />
+<meta property="og:title" content="Join TiMi Moments on Discord" />
+<meta property="og:description" content="Weekly poster challenge, in-game rewards, 2,550 players and counting." />
+<meta property="og:image" content="../promo/promo-wide-1200x628.png" />
+<meta name="theme-color" content="#05030f" />
+<link rel="icon" href="../timi-logo-wRg8OPmp.png" />
+<style>
+  :root {
+    --cyan: #00e5ff; --ice: #a8f0ff; --blue: #2b6bff; --violet: #7b5cff;
+    --magenta: #ff2fd0; --ink: #05030f;
+    --discord: #5865f2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ink); color: #e8f2ff;
+    font-family: Arial, Helvetica, sans-serif; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { position: relative; min-height: 100vh; overflow: hidden; }
+  .bg { position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse at 78% 4%, #2b6bff55 0%, transparent 42%),
+      radial-gradient(ellipse at 8% 78%, #7b5cff3d 0%, transparent 46%),
+      radial-gradient(ellipse at 92% 46%, #00e5ff2b 0%, transparent 32%),
+      linear-gradient(180deg, #0b0722 0%, #0a0d26 52%, #120b2c 100%); }
+  .bg::after { content: ""; position: absolute; inset: 0; opacity: .12;
+    background: repeating-linear-gradient(0deg, #ffffff14 0 1px, transparent 1px 4px); }
+  .inner { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 40px 24px 72px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  header img { width: 118px; height: auto; display: block; }
+  .pill { font-size: 12px; letter-spacing: .28em; font-weight: 700; color: var(--ice);
+    border: 1px solid #7fd4ff3d; border-radius: 999px; padding: 9px 16px; background: #0d1636a8; }
+
+  .hero { margin-top: 56px; text-align: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .3em;
+    font-weight: 700; color: var(--ice); margin-bottom: 22px; }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 34px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan)); }
+  .eyebrow::after { background: linear-gradient(90deg, var(--cyan), transparent); }
+  h1 { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; letter-spacing: -.03em;
+    line-height: .92; font-size: clamp(40px, 7.4vw, 88px); }
+  h1 .g { background: linear-gradient(96deg, #ffffff 8%, var(--ice) 38%, var(--cyan) 78%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 26px rgba(0,196,255,.45)); }
+  .lede { margin: 22px auto 0; max-width: 680px; font-size: clamp(15px, 1.9vw, 21px); color: #cfe0f5; }
+  .lede b { color: #fff; }
+
+  .cta-row { margin-top: 34px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
+  .join { display: inline-flex; align-items: center; gap: 14px; text-decoration: none;
+    background: linear-gradient(96deg, var(--discord), #7b5cff); color: #fff; font-weight: 700;
+    font-size: clamp(16px, 2vw, 21px); letter-spacing: .02em; padding: 18px 34px; border-radius: 14px;
+    box-shadow: 0 0 0 1px #ffffff2e, 0 18px 50px #5865f266, 0 0 60px #7b5cff44; }
+  .join:hover { filter: brightness(1.08); }
+  .join .arrow { font-size: 1.1em; }
+  .subnote { font-size: 13px; color: #93a9c6; }
+
+  /* 成员进度 */
+  .progress { margin: 46px auto 0; max-width: 620px; }
+  .progress .row { display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 13px; letter-spacing: .16em; color: #9fb8d6; font-weight: 700; }
+  .progress .row .now { color: #fff; font-size: 15px; }
+  .bar { margin-top: 12px; height: 12px; border-radius: 999px; background: #131c3a;
+    overflow: hidden; box-shadow: inset 0 0 0 1px #ffffff1a; }
+  .bar i { display: block; height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--cyan), var(--blue) 60%, var(--violet));
+    box-shadow: 0 0 18px #00c4ff88; }
+
+  /* 奖励 */
+  .rewards { margin-top: 76px; background: #0c1230b8; border: 1px solid #7fd4ff26; border-radius: 20px;
+    padding: 32px; box-shadow: 0 30px 80px #0008; }
+  .rewards h2 { font-family: "Arial Black", Arial, sans-serif; font-size: clamp(22px, 3vw, 34px); letter-spacing: -.01em; }
+  .rewards h2 em { color: var(--cyan); font-style: normal; }
+  .rewards .grid { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: #0a0f28; border: 1px solid #ffffff14; border-radius: 14px; padding: 20px; }
+  .card .tag { font-size: 11px; letter-spacing: .24em; font-weight: 700; color: var(--ice); }
+  .card h3 { margin-top: 10px; font-size: 17px; }
+  .card p { margin-top: 8px; font-size: 14px; color: #b9cde6; }
+
+  /* 作品轮播 */
+  .gallery { margin-top: 70px; }
+  .gallery h2 { font-family: "Arial Black", Arial, sans-serif; font-size: clamp(22px, 3vw, 34px); text-align: center; }
+  .gallery .hint { text-align: center; font-size: 13px; color: #93a9c6; margin-top: 8px; }
+  .rail { margin-top: 24px; display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding-bottom: 12px; scrollbar-width: thin; }
+  .rail::-webkit-scrollbar { height: 8px; }
+  .rail::-webkit-scrollbar-thumb { background: #2b6bff88; border-radius: 8px; }
+  .rail figure { flex: 0 0 clamp(220px, 30vw, 300px); scroll-snap-align: center; }
+  .rail img { width: 100%; border-radius: 14px; display: block;
+    box-shadow: 0 0 0 1px #7fd4ff40, 0 22px 60px #000a, 0 0 50px #2b6bff33; }
+  .rail figcaption { margin-top: 10px; font-size: 13px; color: #b9cde6; text-align: center; }
+  .rail figcaption b { color: #fff; }
+
+  /* 三步 */
+  .steps { margin-top: 70px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .step { position: relative; padding: 24px 22px 22px; border-radius: 16px; background: #0a0f28a8;
+    border: 1px solid #ffffff12; }
+  .step .num { font-family: "Arial Black", Arial, sans-serif; font-size: 30px; color: var(--cyan);
+    text-shadow: 0 0 22px #00c4ff77; }
+  .step h3 { margin-top: 8px; font-size: 17px; }
+  .step p { margin-top: 8px; font-size: 14px; color: #b9cde6; }
+
+  .final { margin-top: 76px; text-align: center; }
+  .final h2 { font-family: "Arial Black", Arial, sans-serif; font-size: clamp(24px, 3.4vw, 40px); letter-spacing: -.01em; }
+  .final p { margin-top: 12px; color: #c3d5ee; }
+  footer { margin-top: 56px; text-align: center; font-size: 12px; color: #6f86a6; line-height: 1.7; }
+
+  @media (max-width: 760px) {
+    .inner { padding: 28px 18px 56px; }
+    .rewards { padding: 24px; }
+    .rewards .grid, .steps { grid-template-columns: 1fr; }
+    .rail figure { flex: 0 0 68%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bg"></div>
+  <div class="inner">
+    <header>
+      <img src="../timi-logo-wRg8OPmp.png" alt="TiMi" />
+      <span class="pill" id="source-pill">PLAYER COMMUNITY</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">TURN YOUR SCREENSHOT INTO A POSTER</div>
+      <h1>JOIN THE <span class="g">DISCORD</span></h1>
+      <p class="lede">Drop your best TiMi screenshot. Get a poster in 30 seconds. <b>Post it in our Discord, vote on the best ones, and win in-game rewards every week.</b></p>
+
+      <div class="cta-row">
+        <a class="join" id="join-link" href="#" rel="noopener"><span>Join the Discord</span><span class="arrow">→</span></a>
+        <span class="subnote">Free · No sign-up</span>
+      </div>
+
+      <div class="progress">
+        <div class="row"><span class="now" id="members-now">2,550 members</span><span id="members-goal">Goal: 5,000</span></div>
+        <div class="bar"><i id="members-bar" style="width:51%"></i></div>
+      </div>
+    </section>
+
+    <section class="rewards">
+      <h2>What you get for <em>posting your moment</em></h2>
+      <div class="grid">
+        <div class="card">
+          <div class="tag">WEEKLY</div>
+          <h3>Moment of the Week</h3>
+          <p>Community vote inside Discord. The winning poster gets in-game rewards and a feature in the channel banner.</p>
+        </div>
+        <div class="card">
+          <div class="tag">EVERYONE</div>
+          <h3>Free poster tool</h3>
+          <p>Upload a screenshot, add your name, download a 1080 × 1440 poster. Works in the browser, your image never leaves your device.</p>
+        </div>
+        <div class="card">
+          <div class="tag">MILESTONE</div>
+          <h3>Unlocks at 5,000</h3>
+          <p>We hit 3,000, 4,000 and 5,000 together — every milestone unlocks a server-wide giveaway for all members.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Made by players</h2>
+      <p class="hint">Real posters from the community — swipe to see more</p>
+      <div class="rail" id="rail">
+        <figure><img src="examples/small-example-violet.jpg" alt="Player poster by NightOwl" /><figcaption><b>@NightOwl</b> · final round clutch</figcaption></figure>
+        <figure><img src="examples/small-example-mint.jpg" alt="Player poster by ShadowFox" /><figcaption><b>@ShadowFox</b> · the comeback</figcaption></figure>
+        <figure><img src="examples/small-example-amber.jpg" alt="Player poster by NovaReign" /><figcaption><b>@NovaReign</b> · first MVP</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Join the server</h3>
+        <p>One click, no verification walls. Say hi in #start-here and pick your game role.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Make your poster</h3>
+        <p>Use the tool in #poster-tool, or open it from the pinned message. 30 seconds, no sign-up.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Post it &amp; vote</h3>
+        <p>Drop it in #my-moment. Every Friday the community votes — winners get in-game rewards.</p>
+      </div>
+    </section>
+
+    <section class="final">
+      <h2>Your moment is worth sharing.</h2>
+      <p>2,550 players are already in. Come add yours.</p>
+      <div class="cta-row">
+        <a class="join" id="join-link-2" href="#" rel="noopener"><span>Join the Discord</span><span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <footer>
+      Community-made poster tool and fan community. TiMi and related marks belong to their respective owners.<br />
+      Not an official product. No official endorsement is implied.
+    </footer>
+  </div>
+</div>
+<script>
+  // ====== 需要你替换的一行：Discord 永久邀请链接 ======
+  var DISCORD_INVITE = "https://discord.gg/timimoments";
+  // =================================================
+  var MEMBERS = 2550, GOAL = 5000;
+
+  var params = new URLSearchParams(location.search);
+  var ref = (params.get("ref") || "").toLowerCase();
+  var link = DISCORD_INVITE;
+  ["join-link", "join-link-2"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.href = link;
+  });
+
+  var labels = { tiktok: "WELCOME FROM TIKTOK", youtube: "WELCOME FROM YOUTUBE", x: "WELCOME FROM X", instagram: "WELCOME FROM INSTAGRAM", reddit: "WELCOME FROM REDDIT" };
+  if (labels[ref]) document.getElementById("source-pill").textContent = labels[ref];
+
+  document.getElementById("members-now").textContent = MEMBERS.toLocaleString("en-US") + " members";
+  document.getElementById("members-goal").textContent = "Goal: " + GOAL.toLocaleString("en-US");
+  document.getElementById("members-bar").style.width = Math.round(MEMBERS / GOAL * 100) + "%";
+
+  var rail = document.getElementById("rail");
+  if (rail && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(function () {
+      var max = rail.scrollWidth - rail.clientWidth;
+      if (max <= 2) return;
+      var next = rail.scrollLeft + rail.clientWidth * 0.8;
+      rail.scrollTo({ left: next > max ? 0 : next, behavior: "smooth" });
+    }, 3800);
+  }
+</script>
+</body>
+</html>
